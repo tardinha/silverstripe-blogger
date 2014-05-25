@@ -68,7 +68,7 @@ class BlogPost extends Page {
     $this->beforeUpdateCMSFields(function($fields) use ($data) {
         // Add Publish date fields
         $fields->insertBefore(
-          $publishDate = DatetimeField::create("PublishDate", _t("BlogPost.PublishDate", "Publish Date")),
+          $publishDate = DatetimeField::create("PublishDate", _t("BlogPost.PublishDate", "Publish Date"))->setDescription('The date this post will be pubslished (if in future)'),
           "Content"
         );
         $publishDate->getDateField()->setConfig("showcalendar", true);
